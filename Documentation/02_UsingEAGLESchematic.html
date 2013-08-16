@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>02_UsingEAGLESchematic.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+body{
+    margin: 0 auto;
+    font-family: Georgia, Palatino, serif;
+    color: #444444;
+    line-height: 1;
+    max-width: 960px;
+    padding: 5px;
+}
+h1, h2, h3, h4 {
+    color: #111111;
+    font-weight: 400;
+}
+h1, h2, h3, h4, h5, p {
+    margin-bottom: 16px;
+    padding: 0;
+}
+h1 {
+    font-size: 28px;
+}
+h2 {
+    font-size: 22px;
+    margin: 20px 0 6px;
+}
+h3 {
+    font-size: 21px;
+}
+h4 {
+    font-size: 18px;
+}
+h5 {
+    font-size: 16px;
+}
+a {
+    color: #0099ff;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+a:hover {
+    text-decoration: none;
+    color: #ff6600;
+}
+a:visited {
+    color: purple;
+}
+ul, ol {
+    padding: 0;
+    margin: 0;
+}
+li {
+    line-height: 24px;
+    margin-left: 44px;
+}
+li ul, li ul {
+    margin-left: 24px;
+}
+p, ul, ol {
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 540px;
+}
+pre {
+    padding: 0px 24px;
+    max-width: 800px;
+    white-space: pre-wrap;
+}
+code {
+    font-family: Consolas, Monaco, Andale Mono, monospace;
+    line-height: 1.5;
+    font-size: 13px;
+}
+aside {
+    display: block;
+    float: right;
+    width: 390px;
+}
+blockquote {
+    border-left:.5em solid #eee;
+    padding: 0 2em;
+    margin-left:0;
+    max-width: 476px;
+}
+blockquote  cite {
+    font-size:14px;
+    line-height:20px;
+    color:#bfbfbf;
+}
+blockquote cite:before {
+    content: '\2014 \00A0';
+}
+
+blockquote p {  
+    color: #666;
+    max-width: 460px;
+}
+hr {
+    width: 540px;
+    text-align: left;
+    margin: 0 auto 0 0;
+    color: #999;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+button, input {
+  line-height: normal;
+  *overflow: visible;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+}
+/* override default chrome & firefox settings */
+input:not([type="image"]), textarea {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+label,
+input,
+select,
+textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: normal;
+  margin-bottom: 18px;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+  margin-bottom: 0;
+}
+input[type=text],
+input[type=password],
+textarea,
+select {
+  display: inline-block;
+  width: 210px;
+  padding: 4px;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  height: 18px;
+  color: #808080;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+select, input[type=file] {
+  height: 27px;
+  line-height: 27px;
+}
+textarea {
+  height: auto;
+}
+
+/* grey out placeholders */
+:-moz-placeholder {
+  color: #bfbfbf;
+}
+::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+input[type=text],
+input[type=password],
+select,
+textarea {
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+  outline: none;
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+/* buttons */
+button {
+  display: inline-block;
+  padding: 4px 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: #0064cd;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
+  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
+  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -o-linear-gradient(top, #049cdb, #0064cd);
+  background-image: linear-gradient(top, #049cdb, #0064cd);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid #004b9a;
+  border-bottom-color: #003f81;
+  -webkit-transition: 0.1s linear all;
+  -moz-transition: 0.1s linear all;
+  transition: 0.1s linear all;
+  border-color: #0064cd #0064cd #003f81;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+button:hover {
+  color: #fff;
+  background-position: 0 -15px;
+  text-decoration: none;
+}
+button:active {
+  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* CSS stylesheet is based on Kevin Burke's Markdown.css project (http://kevinburke.bitbucket.org/markdowncss) */
+</style>
+</head>
+<body>
+<h1>Create a Project</h1>
+
+<p>We'll start by making a new <strong>project folder</strong> for our design. In the control panel, under the "Projects" tree, right click on the directory where you want the project to live (by default EAGLE creates an "eagle" directory in your home folder), and select <strong>"New Project"</strong>.</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/8/0/3/2/4/51f82d95757b7f9a1c923eb3.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/8/0/3/2/4/51f82d95757b7f9a1c923eb3.png" alt="How to create a project folder" /></a> &lt;-</p>
+
+<p>Give the newly created, red project folder a descriptive name. How about "Bare Bones Arduino".</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/b/d/6/e/c/51f82f5b757b7fb61cad2df8.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/b/d/6/e/c/51f82f5b757b7fb61cad2df8.png" alt="Project folder created" /></a> &lt;-</p>
+
+<p>Project folders are like any regular file system folder, except they have a special file named "eagle.epf" within. The EPF file links your schematic and board design together, and also stores any settings you may have set especially for a project.</p>
+
+<h3>Create a Schematic</h3>
+
+<p>The project folder will house both our schematic and board design files (and eventually our gerber files too). To begin the design process, we need to lay out a schematic<a href="#asterisk">*</a>.</p>
+
+<p>To add a schematic to a project folder, right-click the folder, hover over <strong>"New"</strong> and select <strong>"Schematic"</strong>.</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/0/3/7/6/9/51f833f8757b7f371c50b50e.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/0/3/7/6/9/51f833f8757b7f371c50b50e.png" alt="Creating a new schematic" /></a> &lt;-</p>
+
+<p>A new, blank window should immediately pop up. Welcome to the schematic editor! </p>
+
+<hr />
+
+<p><a name="asterisk">*</a>: It's not a requirement, but good design practice says that you should lay out your schematic before designing a PCB. The schematic exists as a reference for your board design. When the schematic and board are linked together, changes made in one design are reflected in another.</p>
+
+<h1>Adding Parts to the Schematic</h1>
+
+<p>Overall schematic design is a two step process. First, you have to add all of the parts you're</p>
+
+<p>You can intermix the steps -- add a few parts, wire a few parts, then add some more -- but since we've already got a <a href="">reference design</a> we'll just add everything in one swoop.</p>
+
+<h3>Using the ADD Tool -- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/3/1/b/0/7/5203cfa5757b7fef1a36c04a.png"></h3>
+
+<p>The ADD tool is what you'll use to place every single component on the schematic. It's a library navigator, where you can expand specific libraries, and look at the parts it holds. You can further expand parts with multiple packages, to find an exact component. With a part selected on the left side, the view on the right half should update to show both the schematic symbol of the part and its package, as well as a short description.</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/b/2/1/b/f/5203d359757b7f8e1e389650.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/b/2/1/b/f/5203d359757b7f8e1e389650.png" alt="An example of navigating the ADD tool" /></a> &lt;-</p>
+
+<p>The ADD tool also has search functionality -- very helpful when you have to navigate through dozens of libraries to find a part. The search is totally literal, so don't misspell stuff! You can add wildcards to your search by placing an asterisk (*) before and/or after your search term. For example if you search for <em>atmega328</em> you should find a single part/package combo in the SparkFun-DigitalIC library, but if you search <em>*atmega328*</em> (note asterisks before and after), you'll discover two more versions of the IC (because they're actually named "ATMEGA328<em>P</em>"). You'll probably want to get accustomed to always adding an asterisk before and after your search term.</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/9/3/c/f/f/5203d4b5757b7f227ced6884.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/9/3/c/f/f/5203d4b5757b7f227ced6884.png" alt="Searching the ADD tool. Wildcards!" /></a> &lt;-</p>
+
+<p>To actually add a part from a library either select the part you want and click "OK", or double-click your part.</p>
+
+<h3>Step 1: Add a Frame</h3>
+
+<p>The frame isn't a critical component for what will be the final PCB layout, but it keeps your schematic looking clean and organized. The frame we want should be in the SparkFun-Aesthetics library, and it's named <strong>FRAME-LETTER</strong>. Find that by either searching or navigating and add it to your schematic.</p>
+
+<p>After selecting the part you want to add, it'll "glow" and start hovering around following your mouse cursor. To place the part, left-click (once!). Let's place the frame so its bottom-left corner runs right over our origin (the small dotted cross, in a static spot on the schematic).</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/d/8/a/b/8/5203d92d757b7fcb7a88858c.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/d/8/a/b/8/5203d92d757b7fcb7a88858c.png" alt="Frame added" /></a> &lt;-</p>
+
+<p>After placing a part, the add tool will assume you want to add another. In this case a new frame should start following your cursor. To get out of the add-mode either hit escape (ESC) twice or just select a different tool.</p>
+
+<h3>Step 2: Save (And Save Often)</h3>
+
+<p>Right now your schematic is an untitled temporary file living in the ether. If you go back and look at your control panel, your "Bare Bones Arduino" project folder should still be empty. To save either go to <em>File > Save</em>, or just click the blue floppy disk icon (<img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/e/a/f/1/b/5203da49757b7fc731edc867.png">). Name your schematic something descripting. How about "<strong>BareBonesArduino.sch</strong>" (SCH is the file format for all EAGLE schematics).</p>
+
+<p>As a bonus, after saving, your frame title should update accordingly (you may have to move around the screen, or go to <em>View > Redraw</em>).</p>
+
+<h3>Step 3: Adding the Power Input</h3>
+
+<p>Next we'll add four different parts all devoted to our voltage supply input. Use the add tool for these parts:</p>
+
+<p><center><table border=1 cellpadding=5>
+<tr align="center"><th>Part Description</th><th>Library</th><th>Exact Part Name</th><th>Quantity</th></tr>
+<tr align="center"><td><a href="https://www.sparkfun.com/products/119">5.5mm Barrel Jack (PTH)</a></td><td>SparkFun-Connectors</td><td>POWER_JACKPTH</td><td>1</td></tr>
+<tr align="center"><td><a href="https://www.sparkfun.com/products/8375">0.1&micro;F Ceramic Capacitor</a></td><td>SparkFun-Capacitors</td><td>CAPPTH</td><td>1</td></tr>
+<tr align="center"><td>Voltage Supply Symbol</td><td>SparkFun-Aesthetics</td><td>VCC</td><td>1</td></tr>
+<tr align="center"><td>Ground Symbol</td><td>SparkFun-Aesthetics</td><td>GND</td><td>2</td></tr>
+</table></center><br></p>
+
+<p>All of these parts will go in the top-left of the schematic frame. Arrange like this:</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/a/6/f/7/a/5203e92e757b7fc17b3d34d1.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/a/6/f/7/a/5203e92e757b7fc17b3d34d1.png" alt="Power circuitry placed" /></a> &lt;-</p>
+
+<p>If you need to move parts around, use the MOVE tool (<img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/2/9/0/d/e/5203de36757b7f6b28e50ad6.png">). Left-click once on a part to pick it up (your mouse should be hovering over the part's red "+" origin). Then left click again when it's where it needs to be.</p>
+
+<h3>Step 4: Microprocessor and Supporting Circuitry</h3>
+
+<p>Next we'll add the main component of the design -- the ATmega328 microprocessor -- as well as some components to support it. Here are the parts we'll add:</p>
+
+<p><center><table border=1 cellpadding=5>
+<tr align="center"><th>Part Description</th><th>Library</th><th>Exact Part Name</th><th>Quantity</th></tr>
+<tr align="center"><td><a href="https://www.sparkfun.com/products/9061">ATmega328P (PTH)</a></td><td>SparkFun-DigitalIC</td><td>ATMEGA328P_PDIP</td><td>1</td></tr>
+<tr align="center"><td><a href="https://www.sparkfun.com/products/10969">&frac14;W Resistors</a></td><td>SparkFun-Resistors</td><td>RESISTORPTH-1/4W</td><td>4</td></tr>
+<tr align="center"><td><a href="https://www.sparkfun.com/products/9881">5mm LEDs</a></td><td>SparkFun-LED</td><td>LED5MM</td><td>3</td></tr>
+<tr align="center"><td><a href="https://www.sparkfun.com/products/8375">0.1&micro;F Ceramic Capacitor</a></td><td>SparkFun-Capacitors</td><td>CAPPTH</td><td>1</td></tr>
+<tr align="center"><td>Voltage Supply Symbol</td><td>SparkFun-Aesthetics</td><td>VCC</td><td>2</td></tr>
+<tr align="center"><td>Ground Symbol</td><td>SparkFun-Aesthetics</td><td>GND</td><td>4</td></tr>
+</table></center><br></p>
+
+<p>To rotate parts as your placing them, either select one of the four options on the rotate toolbar (<img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/c/e/0/3/2/5203e83d757b7fbf2b2b734d.png"</img>), or right click before placing the part. Place your microcontroller in the center of the frame, then add the other parts around that like so:</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/b/4/0/c/b/5203f0ce757b7fbf2278b59a.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/b/4/0/c/b/5203f0ce757b7fbf2278b59a.png" alt="Microcontroller circuit added" /></a> &lt;-</p>
+
+<h3>Step 5: Adding the Connectors</h3>
+
+<p>Three connectors will finish off our design. One 8-pin connector to break out the analog pins, a 6-pin serial programming header, and a 2x3-pin ICSP programming header. Here are the three parts to add for this step:</p>
+
+<p><center><table border=1 cellpadding=5>
+<tr align="center"><th>Part Description</th><th>Library</th><th>Exact Part Name</th><th>Quantity</th></tr>
+<tr align="center"><td>8-Pin 0.1" Header</td><td>SparkFun-Connectors</td><td>M081X08</td><td>1</td></tr>
+<tr align="center"><td>2x3 AVR Programming Header</td><td>SparkFun-Connectors</td><td>AVR<em>SPI</em>PRG<em>6PTH</td><td>1</td></tr>
+<tr align="center"><td>6-Pin Serial Programming Header</td><td>SparkFun-Connectors</td><td>ARDUINO</em>SERIAL_PROGRAMPTH</td><td>1</td></tr>
+<tr align="center"><td>Voltage Supply Symbol</td><td>SparkFun-Aesthetics</td><td>VCC</td><td>2</td></tr>
+<tr align="center"><td>Ground Symbol</td><td>SparkFun-Aesthetics</td><td>GND</td><td>2</td></tr>
+</table></center><br></p>
+
+<p>Finally! Here's what your schematic should look like with every part added:</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/4/9/2/a/1/5203f34c757b7f5e26864cd8.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/4/9/2/a/1/5203f34c757b7f5e26864cd8.png" alt="Schematic with all parts added" /></a> &lt;-</p>
+
+<p>Next we'll <strike>wire</strike> net them all together.</p>
+
+<h1>Wiring Up the Schematic</h1>
+
+<p>With all of the parts added to our schematic, it's time to wire them together. There's one major caveat here before we start: even though we're <em>wiring</em> parts on the schematic, we not going to use the WIRE (<img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/c/e/4/4/7/5203f995757b7f5d1eb06947.png">) tool to connect them together. Instead, we'll use the NET (<img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/b/e/e/9/4/5203f995757b7ff21d9d2ed7.png">) tool. The WIRE tool would be better-named as a line-drawing tool, NET does a better job of connecting components. </p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/8/4/9/b/d/5203f942757b7fcc2bcb6ef2.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/400-400/assets/8/4/9/b/d/5203f942757b7fcc2bcb6ef2.png" alt="Use NET not WIRE" /></a> &lt;-</p>
+
+<h3>Using the NET Tool</h3>
+
+<p>To use the NET tool, hover over the very end of a pin (as close as possible, zoom in if you have to), and left-click once to start a wire. Now a green line should be following your mouse cursor around. To terminate the net, left-click on another pin, or an another net.</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/d/1/b/d/e/5203fd3f757b7fec1e7b81a7.gif"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/d/1/b/d/e/5203fd3f757b7fec1e7b81a7.gif" alt="Routing GIF" /></a> &lt;-</p>
+
+<p>The hard part, sometimes, is identifying which part on a circuit symbol is actually a pin. Usually they're recognizable by a thin, horizontal, red line off to the side of a part. Sometimes (not always) they're labeled with a pin number. Make sure you click on the very end of the pin when you start or finish a net route.</p>
+
+<h3>Route the Power Input Circuit</h3>
+
+<p>Start back in the upper left, and route the power input circuit like so:</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/d/a/e/6/8/5204000a757b7f8e2d3b6d30.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/400-400/assets/d/a/e/6/8/5204000a757b7f8e2d3b6d30.png" alt="Power circuit wired up" /></a> &lt;-</p>
+
+<p>Whenever a net splits in two directions a <strong>junction node</strong> is created. This signifies that all three intersecting nets <em>are</em> connected. If two nets cross, but there's not a junction, those nets <em>are not</em> connected.</p>
+
+<h3>Route the ATmega328 Circuit</h3>
+
+<p>Next we'll route the ATmega328 to its supporting circuitry. There's LEDs, a connector, resistor, capacitor and VCC/GND symbols to route to:</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/5/1/5/5/4/52040152757b7f42164688d4.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/5/1/5/5/4/52040152757b7f42164688d4.png" alt="Wiring the ATmega circuit" /></a> &lt;-</p>
+
+<p>Don't forget to add nets between the LEDs, resistors, and GND symbols!</p>
+
+<h3>Making Named, Labeled Net Stubs</h3>
+
+<p>The remaining nets we have to make are not going to be as easy to cleanly route. For example, we need to connect the TXO pin on JP2 to the ATmega's RXD pin, all the way on the other side. You could do it, but it may end up looking a little ugly. Instead, we'll make net "stubs" and give them unique names to connect them.</p>
+
+<p>We'll start by adding net stubs to each of the six pins on the serial connector. Begin by starting a net at a pin, just as you've been doing. Terminate the net by left-clicking a few grid-lengths over to the right of the pin. Then, instead of routing to another pin, just hit ESC to finish the route. When you're done, it should look like this:</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/1/0/9/b/2/520403df757b7f52261a70c9.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/1/0/9/b/2/520403df757b7f52261a70c9.png" alt="Net stubs added to connector pins" /></a> &lt;-</p>
+
+<p>Next, we'll use the NAME (<img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/7/a/8/f/7/5204043d757b7f2a22794ff2.png">) tool to name each of the six nets. With the NAME tool selected, clicking on a net should open a new dialog. Start by naming the net connected to the top, GND pin. Delete the auto-generated name (e.g. N$14), and replace it with "GND" (sans the quotation marks). This should result in a warning dialog, asking you if you want to connect this net to all of the other nets named "GND" (that would be every net connected to a GND symbol). Thanks for looking out for us EAGLE, but in this case <em>Yes</em> we do want to connect GND to GND.</p>
+
+<p>After naming a net, you should use the LABEL (<img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/7/6/7/e/a/52040571757b7f852a55619e.png">) tool to add a label. With the LABEL tool selected, left-click on the net you just named. This should spawn a piece of text that says "GND", left-click again to place the label down right on top of your net.</p>
+
+<p>Follow that same order of operations for the remaining five net stubs. In the end, they should look like this (note the net connected to the TXO pin is named "RX", and a "TX" net connects to RXI -- that's on purpose):</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/0/f/a/7/b/52040644757b7fe37c0e7eb3.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/0/f/a/7/b/52040644757b7fe37c0e7eb3.png" alt="Net stubs named and labeled" /></a> &lt;-</p>
+
+<p>VCC should be the only other net that warns you that you'll be connecting to other nets named "VCC" (anything connected to a VCC voltage node). For the other named nets, we'll need to create this same stub somewhere else. Where exactly? Well, we need to add a "RX" and "TX" net on the ATmega328, and a "DTR" nearby as well:</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/7/0/7/8/6/520407b6757b7fbc483a5576.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/7/0/7/8/6/520407b6757b7fbc483a5576.png" alt="Naming and labeling RX, TX, and DTR" /></a> &lt;-</p>
+
+<p>Even though there's no green net connecting these pins, every net with the <em>same, exact</em> name is actually connected.</p>
+
+<p>We need to do a lot of the same to connect the 2x3 programming header to the ATmega328. First, wire up the connector like so (naming/labeling MOSI, MISO, SCK, and RESET):</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/4/f/a/3/1/5204086b757b7f191d9ae71b.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/4/f/a/3/1/5204086b757b7f191d9ae71b.png" alt="ICSP connecter wired" /></a> &lt;-</p>
+
+<p>Then, back to the ATmega328, add the same four named/labeled nets:</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/5/8/a/c/6/520409f2757b7f4d23f5fd6f.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/5/8/a/c/6/520409f2757b7f4d23f5fd6f.png" alt="ATmega328 SPI pins named/labeled" /></a> &lt;-</p>
+
+<p>Phew -- you're done. Get excited, it's about time to lay out a PCB! When your schematic is done, it should look a little something like this:</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/a/c/0/a/c/52040a3b757b7f04237ab526.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/a/c/0/a/c/52040a3b757b7f04237ab526.png" alt="Final schematic" /></a> &lt;-</p>
+
+<h3>Tips and Tricks: Verifying Connections</h3>
+
+<p>The SHOW (<img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/9/1/f/b/c/52040f2f757b7f127bc3e13a.png">) tool is very useful for verifying that pins across your schematic are connected correctly. If you use SHOW on a net, it and everything else it's connected to should light up. If you're dubious of the fact that two like-named nets are connected, give the SHOW tool a try. SHOWing a net connected to GND, for example, should result in a lot of GND nets lighting up.</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/6/c/e/6/2/52040ea7757b7f42162b3e74.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/6/c/e/6/2/52040ea7757b7f42162b3e74.png" alt="SHOWing a GND trace" /></a> &lt;-</p>
+
+<p>As an alternative to show, you can temporarily MOVE a part a part to make sure nets are connected to it. Use MOVE to pick a part up, and the nets connected to it should bend and adjust to remain so. Just make sure you hit ESC to <em>not</em> move the part (or UNDO if you accidentally move it).</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/b/b/8/3/3/5204102b757b7f1d7b39aab5.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/b/b/8/3/3/5204102b757b7f1d7b39aab5.png" alt="Moving a part to verify a connection" /></a> &lt;-</p>
+
+<p>-> <em>If all the nets connected to a part MOVE with it, all connections are good.</em> &lt;-</p>
+
+<p>If a net isn't moving along with the part, it's not connected to the pin correctly. Double check to make sure you routed to the very end of the pin, and not a bit further:</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/0/1/9/8/2/5203fcf6757b7f1d4f77a9e9.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/0/1/9/8/2/5203fcf6757b7f1d4f77a9e9.png" alt="Poorly routed net" /></a> &lt;-</p>
+
+<p>If you've got any nets like above, DELETE (<img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/5/4/d/c/d/520410b9757b7f237ca2a740.png">) it, and try re-netting.</p>
+
+<h1>Tips and Tricks</h1>
+
+<h3>Adding Text</h3>
+
+<h3>Group Moving</h3>
+
+<h3>Adding Values</h3>
+
+<h3>Copy/Paste</h3>
+
+<h3>Smashing</h3>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

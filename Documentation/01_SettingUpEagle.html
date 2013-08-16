@@ -1,0 +1,452 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>SettingUpEagle.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+body{
+    margin: 0 auto;
+    font-family: Georgia, Palatino, serif;
+    color: #444444;
+    line-height: 1;
+    max-width: 960px;
+    padding: 5px;
+}
+h1, h2, h3, h4 {
+    color: #111111;
+    font-weight: 400;
+}
+h1, h2, h3, h4, h5, p {
+    margin-bottom: 16px;
+    padding: 0;
+}
+h1 {
+    font-size: 28px;
+}
+h2 {
+    font-size: 22px;
+    margin: 20px 0 6px;
+}
+h3 {
+    font-size: 21px;
+}
+h4 {
+    font-size: 18px;
+}
+h5 {
+    font-size: 16px;
+}
+a {
+    color: #0099ff;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+a:hover {
+    text-decoration: none;
+    color: #ff6600;
+}
+a:visited {
+    color: purple;
+}
+ul, ol {
+    padding: 0;
+    margin: 0;
+}
+li {
+    line-height: 24px;
+    margin-left: 44px;
+}
+li ul, li ul {
+    margin-left: 24px;
+}
+p, ul, ol {
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 540px;
+}
+pre {
+    padding: 0px 24px;
+    max-width: 800px;
+    white-space: pre-wrap;
+}
+code {
+    font-family: Consolas, Monaco, Andale Mono, monospace;
+    line-height: 1.5;
+    font-size: 13px;
+}
+aside {
+    display: block;
+    float: right;
+    width: 390px;
+}
+blockquote {
+    border-left:.5em solid #eee;
+    padding: 0 2em;
+    margin-left:0;
+    max-width: 476px;
+}
+blockquote  cite {
+    font-size:14px;
+    line-height:20px;
+    color:#bfbfbf;
+}
+blockquote cite:before {
+    content: '\2014 \00A0';
+}
+
+blockquote p {  
+    color: #666;
+    max-width: 460px;
+}
+hr {
+    width: 540px;
+    text-align: left;
+    margin: 0 auto 0 0;
+    color: #999;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+button, input {
+  line-height: normal;
+  *overflow: visible;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+}
+/* override default chrome & firefox settings */
+input:not([type="image"]), textarea {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+label,
+input,
+select,
+textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: normal;
+  margin-bottom: 18px;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+  margin-bottom: 0;
+}
+input[type=text],
+input[type=password],
+textarea,
+select {
+  display: inline-block;
+  width: 210px;
+  padding: 4px;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  height: 18px;
+  color: #808080;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+select, input[type=file] {
+  height: 27px;
+  line-height: 27px;
+}
+textarea {
+  height: auto;
+}
+
+/* grey out placeholders */
+:-moz-placeholder {
+  color: #bfbfbf;
+}
+::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+input[type=text],
+input[type=password],
+select,
+textarea {
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+  outline: none;
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+/* buttons */
+button {
+  display: inline-block;
+  padding: 4px 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: #0064cd;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
+  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
+  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -o-linear-gradient(top, #049cdb, #0064cd);
+  background-image: linear-gradient(top, #049cdb, #0064cd);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid #004b9a;
+  border-bottom-color: #003f81;
+  -webkit-transition: 0.1s linear all;
+  -moz-transition: 0.1s linear all;
+  transition: 0.1s linear all;
+  border-color: #0064cd #0064cd #003f81;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+button:hover {
+  color: #fff;
+  background-position: 0 -15px;
+  text-decoration: none;
+}
+button:active {
+  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* CSS stylesheet is based on Kevin Burke's Markdown.css project (http://kevinburke.bitbucket.org/markdowncss) */
+</style>
+</head>
+<body>
+<h1>Introduction</h1>
+
+<p>Printed circuit boards (PCBs) are the backbone of every electronic gizmo out there. They're not flashy like those microprocessors, or abundant like resistors, but they're essential to making all components in a circuit connect together just right.</p>
+
+<p>We LOVE designing PCBs here at SparkFun. It's a love that we want to spread. It's a skill that benefits electronics enthusiasts of every caliber. Through this and a series of tutorials, we'll explain how to design a PCB using EAGLE -- the same software we use to design all of our PCBs.</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/2/d/1/2/b/51f829f4757b7fa81c1345d7.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/2/d/1/2/b/51f829f4757b7fa81c1345d7.png" alt="alt text" /></a> &lt;-</p>
+
+<p>This first tutorial goes over how to install the software, and custom-tailor its interface and support files.</p>
+
+<h3>Why EAGLE?</h3>
+
+<p>EAGLE is one of many PCB CAD softwares out there. So you might ask: "What makes EAGLE so special?" We're fond of EAGLE for a few reasons in particular:</p>
+
+<ul>
+<li><strong>Cross-platform</strong> -- EAGLE can run on anything: Windows, Mac, even Linux. This is a feature not too many other PCB design softwares can boast.</li>
+<li><strong>Lightweight</strong> --  EAGLE is about as svelte as PCB design software gets. It requires anywhere from 50-200MB of disk space (compared to the 10+GB more advanced tools might require). The installer is about 25MB. So you can go from download to install to making a PCB in minutes.</li>
+<li><strong>Free/Low-Cost</strong> -- The freeware version of EAGLE provides enough utility to design almost any PCB in the SparkFun catalog. An upgrade to the next license tier (if you want to make a profit off your design) costs at least two orders of magnitude less than most high-end tools.</li>
+<li><strong>Community support</strong> -- For those reasons, and others, EAGLE has become one of the go-to tools for PCB design in the hobbyist community. Whether you want to study the design of an Arduino board, or import a popular sensor into your design somebody has probably already made it in EAGLE and shared it.</li>
+</ul>
+
+<p>Of course, EAGLE has its drawbacks too. More powerful (also read: "expensive") PCB designers out there might have a better autorouter, or useful tools like simulators, programmers, and 3D viewers. For us though, EAGLE has everything we need to design simple-to-intermediate PCBs. It's an excellent place to start if you've never designed a PCB before.</p>
+
+<h3>Recommended Reading</h3>
+
+<p>Here are a few tutorial and concepts you may want to familiarize yourself with, before dropping down into this rabbit hole:</p>
+
+<ul>
+<li><a href="tutorials/7">PCB Basics</a></li>
+<li><a href="tutorials/91">How to Read a Schematic?</a></li>
+<li><a href="tutorials/27">Voltage, Current, Resistance, and Ohm's Law</a></li>
+</ul>
+
+<h1>Download, Install, Run</h1>
+
+<p>EAGLE is available on Cadsoft's (the developer company) <a href="http://www.cadsoftusa.com/download-eagle/">download page</a>. Grab the most recent version that matches your operating system (the software is available for Windows, Mac and Linux). It's a relatively light download -- about 45MB.</p>
+
+<p>EAGLE installs just like any old program, it'll self extract and then present you with a series of dialogs to configure the installation.</p>
+
+<h3>Licensing EAGLE</h3>
+
+<p>On the last screen of the installation process, you should be presented with a window like this:</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/7/6/7/1/3/51f6beabce395fec6d000004.PNG"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/7/6/7/1/3/51f6beabce395fec6d000004.PNG" alt="EAGLE license setup screen" /></a> &lt;-</p>
+
+<p>One of our favorite things about EAGLE is that it can be used for <strong>free</strong>! There are a <a href="http://www.cadsoftusa.com/download-eagle/freeware/">few limitations</a> to be aware of when using the free version:</p>
+
+<ul>
+<li>Your PCB design is limited to a maximum size of 100 x 80mm (3.94 x 3.15in). Even with those restrictiosn 12.4 in<sup>2</sup> is a huge amount of PCB real estate. Even if you're designing a big 'ol <a href="tutorials/40">Arduino shield</a> (usually measuring around 2.1 x 2.7 in<sup>2</sup>), you'll still be well under the maximum size.</li>
+<li>Only a two signal layers allowed. If you need more layers check into the Hobbyist or Standard licenses.</li>
+<li>Can't make multiple sheets in your schematic editor.</li>
+<li>Limited to email or <a href="http://www.cadsoftusa.com/forums/?language=en">forum</a> support.</li>
+<li>For <strong>non-profit</strong> use only. If you're going to go out and sell your design, maybe check into the "Light" version of the software.</li>
+</ul>
+
+<p>Those limitations still make EAGLE an amazing piece of software. Engineers here at SparkFun could design 99% of our boards using the freeware version, if not for that pesky non-profit stipulation. You still have access to all phases of the EAGLE software, including the Autorouter.</p>
+
+<p>If, for any reason, you need to upgrade your license there are a <a href="http://www.cadsoftusa.com/shop/pricing/?language=en">variety of options</a> out there. Most licenses are still incredibly low priced (in comparing to the other stuff out there).</p>
+
+<h3>Exploring the Control Panel</h3>
+
+<p>The first time you open up EAGLE, you should be presented with the <strong>Control Panel</strong> view. The Control Panel is the "homebase" for Eagle, it links together all of the other modules in the software.</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/7/3/6/0/7/51f6c679ce395f756e000000.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/7/3/6/0/7/51f6c679ce395f756e000000.png" alt="Control Panel Overview" /></a> &lt;-</p>
+
+<p>You can explore the six separate trees in the control panel: Libraries, Design Rules, User Language Programs (ULPs), Scripts, CAM Jobs, and Projects. If you select a file in a tree, information about it will appear in the right-hand portion of the window. This is a great way to explore parts in libraries, project designs (EAGLE comes with some fun examples), or to get a good overview of what a certain script's funciton is.</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/7/2/c/b/9/51f6c788ce395fff6e000005.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/7/2/c/b/9/51f6c788ce395fff6e000005.png" alt="Exploring the Control Panel View" /></a> &lt;-</p>
+
+<h1>Using the SparkFun Libraries</h1>
+
+<p>Included with EAGLE is an impressively long list of part libraries, which you can explore in the Control Panel view. There are hundreds of libraries in here, some devoted to specific parts like resistors, or NPN transistors, others are devoted to specific manufacturers. This is an amazing resource! But it can also be a bit overwhelming. Even if you just want to add a simple through-hole electrolytic capacitor, there are dozens of libraries and parts to sort through to find the right thing.</p>
+
+<p>Instead of using the hundreds of default libraries, you can use the <a href="https://github.com/sparkfun/SparkFun-Eagle-Libraries">SparkFun EAGLE Libraries</a>. Our libraries are like a curated version of the default libraries included with Eagle. They're filtered down to only include the parts that we've used in designs ourselves. And they're constantly updated with new parts we've found.</p>
+
+<p>Here's how you can opt to use the SparkFun libraries instead of the default ones:</p>
+
+<h3>Step 1: Download the SparkFun Libraries</h3>
+
+<p>The most recent version of the libraries can be found on <a href="https://github.com/sparkfun/SparkFun-Eagle-Libraries">the GitHub repository</a>. For more help using GitHub, check out our <a href="tutorials/11">Using GitHub</a> tutorial. Basically, all you'll need to do from the main repository page is <strong>click "Download ZIP".</strong></p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/5/9/a/9/c/51f6d74fce395f5c67000006.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/5/9/a/9/c/51f6d74fce395f5c67000006.png" alt="Downloading from github" /></a> &lt;-</p>
+
+<p>Save the ZIP file somewhere handy. And extract the folder. Don't forget where it is!</p>
+
+<h3>Step 2: Updating the Directories Window</h3>
+
+<p>Back to the EAGLE Control Panel window now. Go to the <strong>"Options" menu</strong> and then <strong>select "Directories"</strong>. This is a list of computer directories where EAGLE looks when it populates all six objects in the tree view...including libraries.</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/7/3/a/7/0/51f6d989ce395fd16d000004.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/7/3/a/7/0/51f6d989ce395fd16d000004.png" alt="Opening the directories dialog" /></a> &lt;-</p>
+
+<p>In the "Libraries" box is where we'll add a link to the directory where the SparkFun EAGLE libraries are stored. There are a few options here. Add a semicolon (;) after "$EAGLEDIR\lbr" and paste the SparkFun EAGLE Libraries directory location after that.</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/f/6/e/3/6/51f6e9f3ce395f526e000002.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/f/6/e/3/6/51f6e9f3ce395f526e000002.png" alt="Adding the SparkFun EAGLE libraries directory" /></a> &lt;-</p>
+
+<h3>Step 3: "Using" Libraries</h3>
+
+<p>Now, when you go back and look at the "Libraries" tree, there should be two folders included, one of which should be our SparkFun Eagle Libraries. The last step is to tell EAGLE that, for now at least, we don't want to use the default libraries. To do this, right click on the "lbr" folder, and select <strong>"Use none"</strong>.</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/3/3/f/4/a/51f6ea91ce395f8269000004.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/3/3/f/4/a/51f6ea91ce395f8269000004.png" alt="Un-using the default libraries" /></a> &lt;-</p>
+
+<p>Then, right-click on the "SparkFun-Eagle-Libraries-master" folder, and select <strong>"Use all"</strong>. Then check the libraries in each of the two folders. Next to them should be either a grey or green dot. A green dot next to a library means it's in use, a grey dot means it's not. Your libraries tree should look a little something like this:</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/6/e/b/b/f/51f6eb55ce395fee66000007.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/6/e/b/b/f/51f6eb55ce395fee66000007.png" alt="Correctly set libraries tree. Default lbr's not active, SparkFun lbrs ready to go!" /></a> &lt;-</p>
+
+<h1>Open a Project and Explore</h1>
+
+<p>EAGLE is packaged with a handful of nifty example PCB designs. Open one up by expanding the "Projects" tree. From there, under the "examples" folder open up the "arduino" project by double-clicking the red folder (or right-clicking and selecting "Open project"). Note that, in this view, project folders are red and regular folders are the standard yellow.</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/f/7/9/3/0/51f7e46f757b7f6528767828.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/f/7/9/3/0/51f7e46f757b7f6528767828.png" alt="Opening a project" /></a> &lt;-</p>
+
+<p>Opening the project should cause two more EAGLE windows to spawn: the board and schematic editors. These are the yin and the yang of EAGLE. They should be used together to create the finished product that is a functional PCB design.</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/b/1/3/0/5/51f80387757b7fcd1cdd54c9.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/b/1/3/0/5/51f80387757b7fcd1cdd54c9.png" alt="Board and schematic view both open" /></a> &lt;-</p>
+
+<p>-> <em>Schematic (left) and board editors both open. Click to embiggen.</em> &lt;-</p>
+
+<p>The <strong>schematic editor</strong> (on the left above) is a collection of red circuit symbols which are interconnected with green nets (or wires). A project's schematic is like the comments in a program's code. It helps tell the story of what the board design actually does, but it doesn't have much influence on the end product. Parts in a schematic aren't precisely measured, they're laid out and connected in a way that's easy to read, to help you and others understand what's going on with the board design.</p>
+
+<p>The <strong>board editor</strong> is where the real magic happens. Here colorful layers overlap and intersect to create a precisely measured PCB design. Two copper layers -- red on top, blue on the bottom -- are strategically routed to make sure different signals don't intersect and short out. Yellow (by default, but usually green) circles called "vias" pass a signal from one side to the other. Bigger vias allow for through-hole parts to be inserted and soldered to the board. Other, currently hidden, layers expose copper to create pads for surface mount parts.</p>
+
+<h3>Keep Both Windows Open!</h3>
+
+<p>Both of these windows work hand-in-hand. Any changes made to the schematic are automatically reflected in the board editor. Whenever you're modifying a design it's important to <strong>keep both windows open at all times</strong>.</p>
+
+<p>If, for instance, you closed the board window of a design, but continued to modify a schematic. The changes you made to the schematic wouldn't be reflected in the board design. This is bad. The schematic and board design should always be consistent. It's really painful to backtrack any changes in an effort to bring back consistency. <strong>Always keep both windows open</strong>!</p>
+
+<p>There are a few ways to tell if you don't have consistency between windows. First, there's a "dot" in the lower-right hand corner of both windows. If the dot is green, everything is groovy. If the dot is magenta, a window's probably closed that shouldn't be. Second, and more obvious, if you close either of the two windows a big, huge warning should pop up in the other:</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/2/0/c/0/f/51f7fefb757b7fda1c200df7.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/2/0/c/0/f/51f7fefb757b7fda1c200df7.png" alt="Annotation severed warning. Eeep!" /></a> &lt;-</p>
+
+<p>If you see that warning STOP doing anything, and get the other window back open. The easy way to get either a board or schematic window back open is by clicking the "Switch to board/schematic" icon -- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/9/d/5/1/e/51f7ffa8757b7f9b1cbfa1d1.png"> / <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/a/9/a/d/1/51f7ffa8757b7fa71e5ccb8d.png"> (also found under the "File" menu).</p>
+
+<h3>Navigating the View</h3>
+
+<p>This is a subject that's usually glazed over, but it's important to know how to navigate around both of these windows.</p>
+
+<p>To move around within an editor window, a <strong>mouse with a scroll wheel</strong> comes in very handy. You can zoom in and out by rotating the wheel forward and backward. Pressing the wheel down, and moving the mouse allows you to drag the screen around.</p>
+
+<p>If you're stuck without a three-button mouse, you'll have to resort to the view options to move around the editor views. All of these tools are located near the middle of the top toolbar, or under the "View" menu. The zoom in -- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/6/d/a/f/a/51f7f84c757b7f6f1c062323.png"> -- and zoom out -- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/7/5/d/2/e/51f7f84c757b7f531c9bc863.png"> -- tools are obviously handy. So is the "Zoom select" tool -- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/1/9/a/9/9/51f7f84c757b7fa91c01d54e.png"> -- which alters the view to your selection. But really, if you're serious about using EAGLE...get a mouse!</p>
+
+<h1>Configuring the UI</h1>
+
+<p>EAGLE's user interface is highly customizable. Anything from the background color, to layer colors, to key bindings can be modified to fit your preference. Better tailoring your interface can make designing a PCB much easier. On this page we'll talk about how we at SparkFun prefer to customize our UI. None of these steps are required. Customize your UI as you see fit. These are just the settings that we've grown accustomed to.</p>
+
+<h3>Setting the Background Color</h3>
+
+<p>The first adjustment we always make to the UI is the background color of the board editor. The standard white background doesn't always meld very well with the array of colored layers required for board design. Instead, we usually opt for a black background.</p>
+
+<p>To change the background color, go up to the "Options" menu and select "User interface".</p>
+
+<p>Inside the "Layout" box you can set the background to black, white, or a specific color.</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/4/2/6/b/4/51f7e72f757b7ff124594ec8.PNG"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/4/2/6/b/4/51f7e72f757b7ff124594ec8.PNG" alt="Adjusting the user interface" /></a> &lt;-</p>
+
+<p>There are other options in this box to be explored, but you may want to hold off on adjusting most until you have more experience with the software.</p>
+
+<h3>Adjusting the Grid</h3>
+
+<p>Another UI improvement we like to make in the board editor is turning the grid on. Dimensions and sizes are so important to the design of your PCB, having some visible reminders of size can be very helpful. To turn the grid view on, click the <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/f/4/e/b/3/51f7e841757b7f30250556f5.png"> icon near the top-left corner of the board window (or go to the "View" menu and select "Grid").</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/f/6/4/1/3/51f7e981757b7f41251f9ac7.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/f/6/4/1/3/51f7e981757b7f41251f9ac7.png" alt="Adjusting the grid" /></a> &lt;-</p>
+
+<p>Switch the "Display" radio button over to "On". We'll also make the grid a bit less fine by setting the "Size" to 100 mil and "Alt" to 50 mil.</p>
+
+<h3>Running Scripts</h3>
+
+<p>Scripts are a much more streamlined way to quickly configure your interface. With one click of the button, you can automatically set up all of your colors and key binds. Script files can also be shared, and run by anyone. Running the SparkFun EAGLE script will get your UI to exactly match ours.</p>
+
+<p>First, click <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/5/2/6/e/e/51f7f30e757b7fc71c666640.zip">here</a> to download the script (in a zip folder). Unzip the "spk.scr" file to a location you'll remember.</p>
+
+<p>Then you'll need to run the script. In the board window click on the <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/3/c/6/8/5/51f7ee2e757b7fbe1c83a90f.png"> (script) icon (or go to "File" then "Execute Script"). In the file browser, select the "spk.scr" file you just downloaded and unzipped.</p>
+
+<p>This should automatically set up your color scheme to look a little something like this:</p>
+
+<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/a/a/8/1/8/51f7f354757b7f391c9e2b52.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/a/a/8/1/8/51f7f354757b7f391c9e2b52.png" alt="Board view after running script" /></a> &lt;-</p>
+
+<p>This UI setup is presents a nice logical view of the layers. The important copper layers are very visible, but distinct (red on top, blue on bottom, green for vias), and the silkscreen is white as it is on most PCB designs.</p>
+
+<p>All of these colored layers will make more sense as you continue to use and explore EAGLE. </p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
