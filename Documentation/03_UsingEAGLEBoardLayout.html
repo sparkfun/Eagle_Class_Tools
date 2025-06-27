@@ -276,11 +276,11 @@ button::-moz-focus-inner {
 
 <p>Before you start laying out a board, you should have a schematic drawn up for it to link to. In the previous tutorial, we designed a fully through-hole "bare bones" Arduino, complete with an ATmega328P, barrel jack connector, LEDs, resistors, capacitors, and connectors.</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/b/a/f/f/d/520e54d7757b7f917c8b4571.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/b/a/f/f/d/520e54d7757b7f917c8b4571.png" alt="Schematic from previous tutorial" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/r/600-600/assets/b/a/f/f/d/520e54d7757b7f917c8b4571.png"><img src="https://cdn.sparkfun.com/assets/b/a/f/f/d/520e54d7757b7f917c8b4571.png" alt="Schematic from previous tutorial" /></a> &lt;-</p>
 
-<p>To <strong>switch from the schematic editor to the related board</strong>, simply click the <em>Generate/Switch to Board</em> command -- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/3/d/b/4/8/520515f5757b7f4a146ab186.png"> (on the top toolbar, or under the <em>File</em> menu) -- which should prompt a new, board editor window to open. All of the parts you added from the schematic should be there, stacked on top of eachother, ready to be placed and routed.</p>
+<p>To <strong>switch from the schematic editor to the related board</strong>, simply click the <em>Generate/Switch to Board</em> command -- <img src="https://cdn.sparkfun.com/assets/3/d/b/4/8/520515f5757b7f4a146ab186.png"> (on the top toolbar, or under the <em>File</em> menu) -- which should prompt a new, board editor window to open. All of the parts you added from the schematic should be there, stacked on top of eachother, ready to be placed and routed.</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/7/4/5/6/2/52051a15757b7f5114a22142.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/7/4/5/6/2/52051a15757b7f5114a22142.png" alt="Blank board created" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/r/600-600/assets/7/4/5/6/2/52051a15757b7f5114a22142.png"><img src="https://cdn.sparkfun.com/assets/7/4/5/6/2/52051a15757b7f5114a22142.png" alt="Blank board created" /></a> &lt;-</p>
 
 <p>The board and schematic editors share a few similarities, but, for the most part, they're completely different animals. On the next page, we'll overview the layers of the board editor, so you might have a better idea of what you're looking at now.</p>
 
@@ -288,7 +288,7 @@ button::-moz-focus-inner {
 
 <p><a href="../pcb-basics/composition">PCB composition</a> is all about layering one material over another. The thickest, middle part of the board is a insulating substrate (usually <strong>FR4</strong>). On either side of that is a thin layer of <strong>copper</strong>, where our electric signals pass through. To cover and insulate the copper layers, we cover them with a thin layer of lacquer-like <strong>soldermask</strong>, which is what gives the PCB color (green, red, etc.). Finally, to top it all off, we add a layer of <strong>silkscreen</strong> as a form of documentation for the PCB.</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/4/9/4/2/3/520e5d2d757b7f976f8b456b.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/4/9/4/2/3/520e5d2d757b7f976f8b456b.png" alt="PCB layers" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/assets/4/9/4/2/3/520e5d2d757b7f976f8b456b.png"><img src="https://cdn.sparkfun.com/assets/4/9/4/2/3/520e5d2d757b7f976f8b456b.png" alt="PCB layers" /></a> &lt;-</p>
 
 <p>-> <em>The layers of a double-sided PCB (image from the <a href="tutorials/7">PCB Basics</a> tutorial).</em> &lt;-</p>
 
@@ -314,7 +314,7 @@ button::-moz-focus-inner {
 <tr align="center"><td style="background:#C8C832"></td><td>tDocu</td><td>51</td><td>Top documentation layer. Just for reference. This might show the outline of a part, or other useful information.</td></tr>
 </table><br></p>
 
-<p>To turn any layer off or on, click the "Layer Settings..." button -- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/3/c/b/c/5/520e6775757b7fc6338b4567.png"> -- and then click a layer's number to select or de-select it. Before you start routing, make sure the layers above (aside from tStop and bStop) are visible.</p>
+<p>To turn any layer off or on, click the "Layer Settings..." button -- <img src="https://cdn.sparkfun.com/assets/3/c/b/c/5/520e6775757b7fc6338b4567.png"> -- and then click a layer's number to select or de-select it. Before you start routing, make sure the layers above (aside from tStop and bStop) are visible.</p>
 
 <h3>Why Do I Have to Click Twice Sometimes?</h3>
 
@@ -324,7 +324,7 @@ button::-moz-focus-inner {
 
 <p>Normally, you use the mouse's left-click to select an object (whether it's a trace, via, part, etc.). But when there are two parts overlapping <em>exactly</em> where you're clicking, EAGLE doesn't know which one you want to pick up. In cases like that, EAGLE will pick one of the two overlapping objects, and ask if that's the one you want. If it is, you have to <strong>left-click again to confrim</strong>, or <strong>right-click to cycle</strong> through the other overlapping objects. EAGLE's status box, in the very bottom-left of the window, provides some helpful information when you're trying to select a part.</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/2/9/d/4/f/520e7f0c757b7f16708b4579.gif"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/2/9/d/4/f/520e7f0c757b7f16708b4579.gif" alt="GIF of selecting two layered objects" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/assets/2/9/d/4/f/520e7f0c757b7f16708b4579.gif"><img src="https://cdn.sparkfun.com/assets/2/9/d/4/f/520e7f0c757b7f16708b4579.gif" alt="GIF of selecting two layered objects" /></a> &lt;-</p>
 
 <p>For example: In the GIF above, a <em>VCC</em> net overlaps another named <em>Reset</em>. We left-click once directly where they overlap, and EAGLE asks us if we meant to select <em>VCC</em>. We right-click to cycle, and it asks us instead if we'd like to select <em>Reset</em>. Right-clicking again cycles back to <em>VCC</em>, and a final <em>left-click</em> finally selects that as the net we want to move.</p>
 
@@ -336,9 +336,9 @@ button::-moz-focus-inner {
 
 <h3>Create a Board From Schematic</h3>
 
-<p>If you haven't already, click the <em>Generate/Switch to Board</em> icon -- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/3/d/b/4/8/520515f5757b7f4a146ab186.png"> -- in the schematic editor to create a new PCB design based on your schematic:</p>
+<p>If you haven't already, click the <em>Generate/Switch to Board</em> icon -- <img src="https://cdn.sparkfun.com/assets/3/d/b/4/8/520515f5757b7f4a146ab186.png"> -- in the schematic editor to create a new PCB design based on your schematic:</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/2/4/4/c/7/520e8531757b7f0d708b4568.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/2/4/4/c/7/520e8531757b7f0d708b4568.png" alt="Blank board created" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/r/600-600/assets/2/4/4/c/7/520e8531757b7f0d708b4568.png"><img src="https://cdn.sparkfun.com/assets/2/4/4/c/7/520e8531757b7f0d708b4568.png" alt="Blank board created" /></a> &lt;-</p>
 
 <p>The new board file should show all of the parts from your schematic. The gold lines, called <strong>airwires</strong>, connect between pins and reflect the net connections you made on the schematic. There should also be a faint, light-gray outline of a board dimension to the right of all of the parts.</p>
 
@@ -346,15 +346,15 @@ button::-moz-focus-inner {
 
 <h3>Understanding the Grid</h3>
 
-<p>In the schematic editor we never even looked at the grid, but in the board editor it becomes much more important. The grid should be visible in the board editor. You can adjust the granularity of the grid, by clicking on the GRID -- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/b/7/2/b/8/52051aff757b7f9750a0cc4c.png"> -- icon up in the top-left. A 0.05" grid, and 0.005" alternate grid is a good size for this kind of board.</p>
+<p>In the schematic editor we never even looked at the grid, but in the board editor it becomes much more important. The grid should be visible in the board editor. You can adjust the granularity of the grid, by clicking on the GRID -- <img src="https://cdn.sparkfun.com/assets/b/7/2/b/8/52051aff757b7f9750a0cc4c.png"> -- icon up in the top-left. A 0.05" grid, and 0.005" alternate grid is a good size for this kind of board.</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/e/6/f/e/2/52051bb3757b7fad144bb8e4.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/e/6/f/e/2/52051bb3757b7fad144bb8e4.png" alt="Default grid settings are good" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/assets/e/6/f/e/2/52051bb3757b7fad144bb8e4.png"><img src="https://cdn.sparkfun.com/assets/e/6/f/e/2/52051bb3757b7fad144bb8e4.png" alt="Default grid settings are good" /></a> &lt;-</p>
 
 <p>Also note the origin in the board editor view -- a dotted cross. With the freeware version of EAGLE, you'll only be able to work in the area above and to the right of that origin.</p>
 
 <h3>Moving Parts</h3>
 
-<p>Using the MOVE tool -- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/e/5/b/1/3/52051be0757b7f2a15e3ea0f.png"> -- you can start to move parts inside the gray box. The way you arrange your parts has a huge impact on how easy or hard the next step will be.</p>
+<p>Using the MOVE tool -- <img src="https://cdn.sparkfun.com/assets/e/5/b/1/3/52051be0757b7f2a15e3ea0f.png"> -- you can start to move parts inside the gray box. The way you arrange your parts has a huge impact on how easy or hard the next step will be.</p>
 
 <p>While you're moving parts, you can <strong>rotate</strong> them by either right-clicking or changing the angle in the drop-down box near the top.</p>
 
@@ -362,28 +362,28 @@ button::-moz-focus-inner {
 
 <ul>
 <li><strong>Dont overlap parts</strong>: All of your components need some space to breathe. The green via holes need a good amount of clearance between them too -- when you send this board to a manufacturer those are turned into copper-filled rings. If copper overlaps, <a href="https://www.youtube.com/watch?v=jyaLZHiJJnE">streams will cross</a> and short circuits will happen.</li>
-<li><strong>Minimize airwire overlaps</strong>: While you move parts, notice how the airwires move with them. Limiting intersecting airwires as much as you can will make routing <em>much</em> easier in the long run. While you're relocating parts, hit the RATSNEST button -- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/b/d/0/4/9/520533c2757b7f03341e95f7.png"> -- to get the airwires to recalculate.</li>
+<li><strong>Minimize airwire overlaps</strong>: While you move parts, notice how the airwires move with them. Limiting intersecting airwires as much as you can will make routing <em>much</em> easier in the long run. While you're relocating parts, hit the RATSNEST button -- <img src="https://cdn.sparkfun.com/assets/b/d/0/4/9/520533c2757b7f03341e95f7.png"> -- to get the airwires to recalculate.</li>
 <li><strong>Part placement requirements</strong>: Some parts may require special consideration during placement. For example, you'll probably want the insertion point of the barrel jack connector to be facing the edge of the board. And make sure that decoupling capacitor is nice and close to the IC.</li>
 <li>Tighter placement means a smaller and cheaper board, but it also makes routing harder.</li>
 </ul>
 
 <p>Below is an example of how you might lay out your board while considering those factors. We've minimized airwire intersections by cleverly placing the LEDs and their current-limiting resistors. Some parts are placed where they just <em>have</em> to go (the barrel jack, and decoupling capacitor). And the layout is relatively tight.</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/d/b/8/b/4/520527cc757b7f7b14884e0f.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/d/b/8/b/4/520527cc757b7f7b14884e0f.png" alt="Parts placed" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/r/600-600/assets/d/b/8/b/4/520527cc757b7f7b14884e0f.png"><img src="https://cdn.sparkfun.com/assets/d/b/8/b/4/520527cc757b7f7b14884e0f.png" alt="Parts placed" /></a> &lt;-</p>
 
 <p>-> <em>Note: The tNames layer (which isn't visible by default) was turned on to help identify which part is which.</em> &lt;-</p>
 
 <h3>Adjusting the Dimension Layer</h3>
 
-<p>Now that the parts are placed, we're starting to get a better idea of how the board will look. Now we just need to fix our border dimensions. It's usually easier to just start from scratch. Use the DELETE tool -- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/a/6/e/6/7/520533ef757b7f5f3381bb3c.png"> -- to erase all four of the dimension borders.</p>
+<p>Now that the parts are placed, we're starting to get a better idea of how the board will look. Now we just need to fix our border dimensions. It's usually easier to just start from scratch. Use the DELETE tool -- <img src="https://cdn.sparkfun.com/assets/a/6/e/6/7/520533ef757b7f5f3381bb3c.png"> -- to erase all four of the dimension borders.</p>
 
-<p>Then use the WIRE tool -- (<img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/e/0/a/2/6/5205334e757b7f3834c562ba.png"> -- to draw a new outline. Before you draw anything though, go up to the options bar and <strong>set the layer to "20 Dimension"</strong>. Also up there, you may want to turn down the width a bit (we usually set it to 0.008").</p>
+<p>Then use the WIRE tool -- (<img src="https://cdn.sparkfun.com/assets/e/0/a/2/6/5205334e757b7f3834c562ba.png"> -- to draw a new outline. Before you draw anything though, go up to the options bar and <strong>set the layer to "20 Dimension"</strong>. Also up there, you may want to turn down the width a bit (we usually set it to 0.008").</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/2/0/e/7/1/5205293d757b7f8e15e147cb.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/2/0/e/7/1/5205293d757b7f8e15e147cb.png" alt="Dimension options selected" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/assets/2/0/e/7/1/5205293d757b7f8e15e147cb.png"><img src="https://cdn.sparkfun.com/assets/2/0/e/7/1/5205293d757b7f8e15e147cb.png" alt="Dimension options selected" /></a> &lt;-</p>
 
 <p>Then, starting at the origin, draw a box around your parts. Don't intersect the dimension layer with any holes, or they'll be cut off! Make sure you end where you started.</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/3/9/8/2/3/52052b67757b7fd014094f67.gif"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/3/9/8/2/3/52052b67757b7fd014094f67.gif" alt="Drawing the dimension layer" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/assets/3/9/8/2/3/52052b67757b7fd014094f67.gif"><img src="https://cdn.sparkfun.com/assets/3/9/8/2/3/52052b67757b7fd014094f67.gif" alt="Drawing the dimension layer" /></a> &lt;-</p>
 
 <p>That's a fine start. With the parts laid out, and the dimension adjusted, we're ready to start routing some copper!</p>
 
@@ -393,9 +393,9 @@ button::-moz-focus-inner {
 
 <h3>Using the Route Tool</h3>
 
-<p>To draw all of our copper traces, we'll use the ROUTE tool-- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/3/1/7/c/f/520535a0757b7fe833d90e6d.png"> -- (not the WIRE tool!). After selecting the tool, there are a few options to consider on the toolbar above:</p>
+<p>To draw all of our copper traces, we'll use the ROUTE tool-- <img src="https://cdn.sparkfun.com/assets/3/1/7/c/f/520535a0757b7fe833d90e6d.png"> -- (not the WIRE tool!). After selecting the tool, there are a few options to consider on the toolbar above:</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/9/0/2/6/2/52053bcd757b7f434a43b1f2.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/9/0/2/6/2/52053bcd757b7f434a43b1f2.png" alt="Route options" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/r/600-600/assets/9/0/2/6/2/52053bcd757b7f434a43b1f2.png"><img src="https://cdn.sparkfun.com/assets/9/0/2/6/2/52053bcd757b7f434a43b1f2.png" alt="Route options" /></a> &lt;-</p>
 
 <ul>
 <li><strong>Layer</strong>: On a 2-layer board like this, you'll have to choose whether you want to start routing on the top (1) or bottom (16) layer.</li>
@@ -406,11 +406,11 @@ button::-moz-focus-inner {
 
 <p>With those all set, you start a route by left-clicking on a pin where a airwire terminates. The airwire, and connected pins will "glow", and a red or blue line will start on the pin. You finish the trace by left-clicking again on top of the other pin the airwire connects to. Between the pins, you can left-click as much as you need to "glue" a trace down.</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/0/9/2/1/7/52053f90757b7f0412ebdaaf.gif"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/0/9/2/1/7/52053f90757b7f0412ebdaaf.gif" alt="Animated routing" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/assets/0/9/2/1/7/52053f90757b7f0412ebdaaf.gif"><img src="https://cdn.sparkfun.com/assets/0/9/2/1/7/52053f90757b7f0412ebdaaf.gif" alt="Animated routing" /></a> &lt;-</p>
 
 <p>While routing it's important to avoid two cases of overlap: copper over vias, and copper over copper. Remember that all of these copper traces are basically bare wire. If two signals overlap, they'll short out, and neither will do what it's supposed to.</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/e/f/b/7/6/52053df5757b7f594b9d0ae5.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/e/f/b/7/6/52053df5757b7f594b9d0ae5.png" alt="Good and bad trace overlaps" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/r/600-600/assets/e/f/b/7/6/52053df5757b7f594b9d0ae5.png"><img src="https://cdn.sparkfun.com/assets/e/f/b/7/6/52053df5757b7f594b9d0ae5.png" alt="Good and bad trace overlaps" /></a> &lt;-</p>
 
 <p>If traces do cross each other, make sure they do so on opposite sides of the board. It's perfectly acceptable for a trace on the top side to intersect with one on the bottom. That's why there are two layers!</p>
 
@@ -422,7 +422,7 @@ button::-moz-focus-inner {
 
 <p>To place a via mid-route, first left-click in the black ether between pins to "glue" your trace down. Then you can either change the layer manually in the options bar up top, or <strong>click your middle mouse button</strong> to swap sides. And continue routing to your destination. EAGLE will automatically add a via for you.</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/c/a/3/e/3/520541ce757b7f861122d291.gif"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/c/a/3/e/3/520541ce757b7f861122d291.gif" alt="Routing with vias" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/assets/c/a/3/e/3/520541ce757b7f861122d291.gif"><img src="https://cdn.sparkfun.com/assets/c/a/3/e/3/520541ce757b7f861122d291.gif" alt="Routing with vias" /></a> &lt;-</p>
 
 <h4>Route Clearance</h4>
 
@@ -430,7 +430,7 @@ button::-moz-focus-inner {
 
 <h4>Ripping Up Traces</h4>
 
-<p>Much like the WIRE tool isn't actually used to make wires, the DELETE tool can't actually be used to delete traces. If you need to go back and re-work a route, use the <strong>RIPUP</strong> tool -- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/0/0/b/b/2/52054bd8757b7f9e122e8279.png"> -- to remove traces. This tool turns routed traces back into airwires.</p>
+<p>Much like the WIRE tool isn't actually used to make wires, the DELETE tool can't actually be used to delete traces. If you need to go back and re-work a route, use the <strong>RIPUP</strong> tool -- <img src="https://cdn.sparkfun.com/assets/0/0/b/b/2/52054bd8757b7f9e122e8279.png"> -- to remove traces. This tool turns routed traces back into airwires.</p>
 
 <p>You can also use UNDO and REDO to back/forward-track.</p>
 
@@ -438,7 +438,7 @@ button::-moz-focus-inner {
 
 <p>That's about all the simple rules there are. Go have the time of your life solving the routing puzzle! You may want to start on the closest, easiest traces first. Or, you might want to route the important signals -- like power and ground -- first. Here's an example of a fully-routed board:</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/4/b/2/f/f/52054a53757b7fcd11078219.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/4/b/2/f/f/52054a53757b7fcd11078219.png" alt="Completed Layout" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/r/600-600/assets/4/b/2/f/f/52054a53757b7fcd11078219.png"><img src="https://cdn.sparkfun.com/assets/4/b/2/f/f/52054a53757b7fcd11078219.png" alt="Completed Layout" /></a> &lt;-</p>
 
 <p>See if you can do a better job than that! Make your board smaller. Or try to avoid using any vias.</p>
 
@@ -450,9 +450,9 @@ button::-moz-focus-inner {
 
 <h3>Ratsnest -- Nothing To Do!</h3>
 
-<p>The first check is to make sure you've actually routed all of the nets in your schematic. To do this, hit the RATSNEST icon -- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/b/d/0/4/9/520533c2757b7f03341e95f7.png"> -- and then immediately check the bottom left status box. If you've routed everything, it should say "Ratsnest: Nothing to do!"</p>
+<p>The first check is to make sure you've actually routed all of the nets in your schematic. To do this, hit the RATSNEST icon -- <img src="https://cdn.sparkfun.com/assets/b/d/0/4/9/520533c2757b7f03341e95f7.png"> -- and then immediately check the bottom left status box. If you've routed everything, it should say "Ratsnest: Nothing to do!"</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/5/5/6/b/7/52054cfe757b7fc9113ba8c8.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/5/5/6/b/7/52054cfe757b7fc9113ba8c8.png" alt="Ratsnest -- Nothing to do!" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/assets/5/5/6/b/7/52054cfe757b7fc9113ba8c8.png"><img src="https://cdn.sparkfun.com/assets/5/5/6/b/7/52054cfe757b7fc9113ba8c8.png" alt="Ratsnest -- Nothing to do!" /></a> &lt;-</p>
 
 <p>As denoted by the exclamation mark, having "nothing to do" is very exciting. It means you've made every route required.</p>
 
@@ -460,11 +460,11 @@ button::-moz-focus-inner {
 
 <h3>Design Rule Check</h3>
 
-<p>If you're done routing, there's just one more check to be made: the design rule check (DRC). For this step, we recommend you use the SparkFun design rules, which you can download <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/1/e/3/2/0/52054e25757b7f44119e09da.zip">here</a>.</p>
+<p>If you're done routing, there's just one more check to be made: the design rule check (DRC). For this step, we recommend you use the SparkFun design rules, which you can download <a href="https://cdn.sparkfun.com/assets/1/e/3/2/0/52054e25757b7f44119e09da.zip">here</a>.</p>
 
-<p>To load up the DRC, click the DRC icon -- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/6/1/d/4/e/52054ea2757b7f5f11191e82.png"> -- which opens up this dialog:</p>
+<p>To load up the DRC, click the DRC icon -- <img src="https://cdn.sparkfun.com/assets/6/1/d/4/e/52054ea2757b7f5f11191e82.png"> -- which opens up this dialog:</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/1/f/2/7/2/52054f04757b7f1d12530335.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/1/f/2/7/2/52054f04757b7f1d12530335.png" alt="Default DRC dialog" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/r/600-600/assets/1/f/2/7/2/52054f04757b7f1d12530335.png"><img src="https://cdn.sparkfun.com/assets/1/f/2/7/2/52054f04757b7f1d12530335.png" alt="Default DRC dialog" /></a> &lt;-</p>
 
 <p>The tabs in this view (Layers, Clearance, Distance, etc.) help define a huge set of design rules which your layout needs to pass. These rules define things like minimum clearance distances, or trace widths, or drill hole sizes...all sorts of fun stuff. Instead of setting each of those manually, you can load up a set of design rules using a DRU file. To do this, <strong>hit "Load..."</strong> and select the <strong>SparkFun.dru</strong> file you just downloaded. The title of the window should change to "DRC (SparkFun)", if it does, <strong>hit the "Check" button</strong>.</p>
 
@@ -472,7 +472,7 @@ button::-moz-focus-inner {
 
 <p>The error window lists all of the open errors, and it also highlights where the error is. Click on any of the errors listed, and EAGLE will point to the offender.</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/7/f/0/e/8/520551c9757b7f7811185fa6.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/7/f/0/e/8/520551c9757b7f7811185fa6.png" alt="Overlap and clearance errors" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/r/600-600/assets/7/f/0/e/8/520551c9757b7f7811185fa6.png"><img src="https://cdn.sparkfun.com/assets/7/f/0/e/8/520551c9757b7f7811185fa6.png" alt="Overlap and clearance errors" /></a> &lt;-</p>
 
 <p>There are all sorts of errors that the DRC can find, but here are some of the most common:</p>
 
@@ -492,19 +492,19 @@ button::-moz-focus-inner {
 
 <p>Copper pours are usually a great addition to a board. They look professional and they actually have a good reason for existing. Not to mention they make routing <em>much</em> easier. Usually, when you're adding a copper pour it's for the ground signal. So let's add some ground pours to the design.</p>
 
-<p>Start by selecting the POLYGON -- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/4/a/6/c/2/520555bb757b7f5f115ee8ae.png"> -- tool. Then (as usual), you'll need to adjust some settings in the options bar. Select the top copper (1)  layer. Also adjust the <strong>Isolate</strong> setting which defines how much clearance the ground pour gives other signals, 0.012" for this is usually good.</p>
+<p>Start by selecting the POLYGON -- <img src="https://cdn.sparkfun.com/assets/4/a/6/c/2/520555bb757b7f5f115ee8ae.png"> -- tool. Then (as usual), you'll need to adjust some settings in the options bar. Select the top copper (1)  layer. Also adjust the <strong>Isolate</strong> setting which defines how much clearance the ground pour gives other signals, 0.012" for this is usually good.</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/a/9/5/e/9/520558bb757b7fdc113a07af.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/a/9/5/e/9/520558bb757b7fdc113a07af.png" alt="Polygon option settings" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/r/600-600/assets/a/9/5/e/9/520558bb757b7fdc113a07af.png"><img src="https://cdn.sparkfun.com/assets/a/9/5/e/9/520558bb757b7fdc113a07af.png" alt="Polygon option settings" /></a> &lt;-</p>
 
 <p>Next, draw a set of lines just like you did the dimension box. In fact, just draw right on top of the dimension lines. Start drawing at the origin, trace all the way around, and finish back at the same spot. A dotted red box should appear around the dimension of the board.</p>
 
-<p>After you've drawn the polygon, you have to connect it to a net using the NAME tool -- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/0/6/5/b/6/52055d51757b7fa31202151e.png">. This works just like naming nets on a schematic. Use that tool on the dotted red line you just created, and in the dialog that pops up type "GND". (Click <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/b/9/c/1/1/52055a6c757b7f76115b941a.gif">here</a> to see an animated GIF of the entire process.)</p>
+<p>After you've drawn the polygon, you have to connect it to a net using the NAME tool -- <img src="https://cdn.sparkfun.com/assets/0/6/5/b/6/52055d51757b7fa31202151e.png">. This works just like naming nets on a schematic. Use that tool on the dotted red line you just created, and in the dialog that pops up type "GND". (Click <a href="https://cdn.sparkfun.com/assets/b/9/c/1/1/52055a6c757b7f76115b941a.gif">here</a> to see an animated GIF of the entire process.)</p>
 
 <p>The last step is to <strong>hit ratsnest</strong>, to watch the glorious red pour fill just about the entire area of your board. You'll probably hate me for telling you this <em>now</em>, but you should make your ground pour before you start routing. That'll automatically wire up all of your GND traces, which are always a big chunk of the routes.</p>
 
 <p>You can (and probably should) have ground pours on both sides of the board, so follow the same set of steps on the bottom layer. </p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/8/4/6/0/4/52055b0c757b7f3b11dc0ded.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/8/4/6/0/4/52055b0c757b7f3b11dc0ded.png" alt="Ground pours on both layers" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/r/600-600/assets/8/4/6/0/4/52055b0c757b7f3b11dc0ded.png"><img src="https://cdn.sparkfun.com/assets/8/4/6/0/4/52055b0c757b7f3b11dc0ded.png" alt="Ground pours on both layers" /></a> &lt;-</p>
 
 <p>It can be hard to tell what is and isn't connected to the ground pour. If you see a black gap separating a pad and the pour, there is no connection. If you see some traces forming a "target" over the pad, there is a connection from the pour to that pad.</p>
 
@@ -512,11 +512,11 @@ button::-moz-focus-inner {
 
 <h3>Adding Silkscreen</h3>
 
-<p>Although it has no real effect on the circuit your designing, silkscreen can be a critical part of the PCB design. You want it to look good, right? Some silkscreen -- like the outlines on most parts -- is automatically placed on the board because it's a piece of the part. Other stuff, like labels, logos, and names is up to us to add though. Any of the draw tools -- wire (<img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/e/0/a/2/6/5205334e757b7f3834c562ba.png">), text (<img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/0/4/f/d/f/5205658d757b7f95110a4b64.png">), circle (<img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/3/d/a/1/5/5205658d757b7f2a112f90ca.png">), arc (<img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/3/c/1/d/b/5205658d757b7fb4117e8fc9.png">), rectangle (<img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/9/0/5/0/3/5205658d757b7fcf1123d661.png">), and polygon (<img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/4/a/6/c/2/520555bb757b7f5f115ee8ae.png">) -- can be used to draw on the silkscreen layer (<strong>tPlace</strong> for top, <strong>bPlace</strong> for bottom).</p>
+<p>Although it has no real effect on the circuit your designing, silkscreen can be a critical part of the PCB design. You want it to look good, right? Some silkscreen -- like the outlines on most parts -- is automatically placed on the board because it's a piece of the part. Other stuff, like labels, logos, and names is up to us to add though. Any of the draw tools -- wire (<img src="https://cdn.sparkfun.com/assets/e/0/a/2/6/5205334e757b7f3834c562ba.png">), text (<img src="https://cdn.sparkfun.com/assets/0/4/f/d/f/5205658d757b7f95110a4b64.png">), circle (<img src="https://cdn.sparkfun.com/assets/3/d/a/1/5/5205658d757b7f2a112f90ca.png">), arc (<img src="https://cdn.sparkfun.com/assets/3/c/1/d/b/5205658d757b7fb4117e8fc9.png">), rectangle (<img src="https://cdn.sparkfun.com/assets/9/0/5/0/3/5205658d757b7fcf1123d661.png">), and polygon (<img src="https://cdn.sparkfun.com/assets/4/a/6/c/2/520555bb757b7f5f115ee8ae.png">) -- can be used to draw on the silkscreen layer (<strong>tPlace</strong> for top, <strong>bPlace</strong> for bottom).</p>
 
 <p>Have fun and explore with these tools. You could add labels for the headers, or values for the resistors, or even create a nifty logo.</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/b/4/0/2/9/520563d7757b7fa3110bd051.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/b/4/0/2/9/520563d7757b7fa3110bd051.png" alt="Silkscreen added to the design" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/r/600-600/assets/8/e/3/f/d/52e7e469ce395f6e4e8b4568.png"><img src="https://cdn.sparkfun.com/assets/8/e/3/f/d/52e7e469ce395f6e4e8b4568.png" alt="Silkscreen added to the design" /></a> &lt;-</p>
 
 <p>The draw tools are a bit limited, but that doesn't mean you can't make it look good!</p>
 
@@ -528,11 +528,11 @@ button::-moz-focus-inner {
 
 <h3>CAM Processor</h3>
 
-<p>Before we get too much further, you'll need to download another definition file: <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/c/1/9/8/2/52056b19757b7f795b2a561c.zip">SparkFun's CAM file</a>.</p>
+<p>Before we get too much further, you'll need to download another definition file: <a href="https://cdn.sparkfun.com/assets/c/1/9/8/2/52056b19757b7f795b2a561c.zip">SparkFun's CAM file</a>.</p>
 
-<p>Then, load up the CAM processor by clicking the CAM icon -- <img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/4/b/c/0/6/52056d00757b7f685cd59be7.png"> -- which will open up this window:</p>
+<p>Then, load up the CAM processor by clicking the CAM icon -- <img src="https://cdn.sparkfun.com/assets/4/b/c/0/6/52056d00757b7f685cd59be7.png"> -- which will open up this window:</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/0/1/c/e/c/52056d67757b7fd95bba0f0f.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/assets/0/1/c/e/c/52056d67757b7fd95bba0f0f.png" alt="Default CAM processor view" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/assets/0/1/c/e/c/52056d67757b7fd95bba0f0f.png"><img src="https://cdn.sparkfun.com/assets/0/1/c/e/c/52056d67757b7fd95bba0f0f.png" alt="Default CAM processor view" /></a> &lt;-</p>
 
 <p>From here, go to the <strong>File menu</strong>, then go <strong>Open > Job...</strong>. In the file browser that opens, select the <strong>sfe-gerb274x.cam</strong> file that you just downloaded. Now the CAM processor window should have a series of tabs: "Top Copper", "Bottom Copper", "Top Silkscreen", etc. Each of these tabs define how to create one of the gerber files. Now all you have to do is click <strong>Process Job</strong>. If you haven't saved recently, it'll prompt you to.</p>
 
@@ -563,13 +563,13 @@ button::-moz-focus-inner {
 
 <p>The process of sending gerber files varies by fab house. Most will have you upload a zipped folder of select files. Which gerber files? Check with your fab house again (e.g. <a href="https://www.my4pcb.com/net35/FreeDFMNet/SoftwareNamingDefaults.aspx">Advanced Circuits</a> and <a href="http://oshpark.com/guidelines">OSH Park's</a> guidelines), but usually you want to send them GTL, GBL, GTS, GBS, GTO, GBO and the TXT files. The GTP file isn't necessary for the PCB fabrication, but (if your design had SMD parts) it can be used to create a <a href="../electronics-assembly/stenciling">stencil</a>.</p>
 
-<p>-> <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/d/d/3/7/c/520e9363757b7fa96f8b4573.png"><img src="https://dlnmh9ip6v2uc.cloudfront.net/r/600-600/assets/d/d/3/7/c/520e9363757b7fa96f8b4573.png" alt="Zipping gerbers" /></a> &lt;-</p>
+<p>-> <a href="https://cdn.sparkfun.com/r/600-600/assets/d/d/3/7/c/520e9363757b7fa96f8b4573.png"><img src="https://cdn.sparkfun.com/assets/d/d/3/7/c/520e9363757b7fa96f8b4573.png" alt="Zipping gerbers" /></a> &lt;-</p>
 
 <p>So zip those gerbers up. Play the <a href="http://www.youtube.com/watch?v=xJqg_-wXnuU">waiting game</a>. And get ready to assemble your very own PCB!</p>
 
 <h1>Resources and Going Further</h1>
 
-<p>If you'd like to check out the reference design we did in this tutorial, you can download them <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/4/6/c/d/f/520e9b2a757b7f1f7b8b4573.zip">here</a>. That also includes the gerber files, and all EAGLE scripts used in this tutorial.</p>
+<p>If you'd like to check out the reference design we did in this tutorial, you can download them <a href="https://cdn.sparkfun.com/assets/4/6/c/d/f/520e9b2a757b7f1f7b8b4573.zip">here</a>. That also includes the gerber files, and all EAGLE scripts used in this tutorial.</p>
 
 <h3>Going Further</h3>
 
